@@ -1,0 +1,98 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><title>Lead management dashboard – Nov 18 &amp; 19</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f7f9;--sf:#fff;--tx:#14212b;--mu:#5b6b78;--ln:#dde4ea;--ac:#0b6e6e;--ac2:#e0eeee;--wr:#b4540a;--bd:#b3261e;--gd:#1f7a4d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0f171d;--sf:#17232b;--tx:#e6edf2;--mu:#93a4b1;--ln:#2a3a45;--ac:#4cc3bd;--ac2:#18353a;--wr:#f0a35e;--bd:#ff8a80;--gd:#6fd3a0}}
+:root[data-theme=dark]{--bg:#0f171d;--sf:#17232b;--tx:#e6edf2;--mu:#93a4b1;--ln:#2a3a45;--ac:#4cc3bd;--ac2:#18353a;--wr:#f0a35e;--bd:#ff8a80;--gd:#6fd3a0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.5 "IBM Plex Sans",system-ui,sans-serif}
+main{max-width:1080px;margin:0 auto;padding:20px 16px 48px}
+h1{font-size:24px;font-weight:600;margin:0 0 4px}h2{font-size:17px;font-weight:600;margin:28px 0 10px}h3{font-size:14px;font-weight:600;margin:0 0 8px}
+.sub{color:var(--mu);margin:0 0 16px}
+.tabs{display:inline-flex;border:1px solid var(--ln);border-radius:8px;overflow:hidden;background:var(--sf)}
+.tabs button{font:inherit;padding:8px 16px;border:0;background:none;color:var(--mu);cursor:pointer}
+.tabs button[aria-pressed=true]{background:var(--ac);color:#fff}
+.tabs button:focus-visible{outline:2px solid var(--tx);outline-offset:-2px}
+.grid{display:grid;gap:16px}.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,460px),1fr))}
+.day{background:var(--sf);border:1px solid var(--ln);border-radius:10px;padding:16px;min-width:0}
+.day>h2{margin:0 0 12px;font-size:19px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-bottom:16px}
+.k{border:1px solid var(--ln);border-radius:8px;padding:10px}.k b{display:block;font-size:24px;font-weight:600;line-height:1.1}.k span{color:var(--mu);font-size:12.5px}
+.row{display:grid;grid-template-columns:92px 1fr 34px;gap:8px;align-items:center;margin:4px 0;font-size:13.5px}
+.bar{height:14px;background:var(--ac2);border-radius:3px;overflow:hidden}.bar i{display:block;height:100%;background:var(--ac)}
+.row b{text-align:right;font-weight:600}
+.sc{overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{padding:5px 7px;text-align:right;border-bottom:1px solid var(--ln);white-space:nowrap}th:first-child,td:first-child{text-align:left}th{color:var(--mu);font-weight:500}
+.w{color:var(--wr);font-weight:600}.r{color:var(--bd);font-weight:600}.g{color:var(--gd);font-weight:600}
+.rep{background:var(--sf);border:1px solid var(--ln);border-radius:10px;padding:4px 20px 18px}
+.rep p,.rep li{max-width:78ch}.rep li{margin:5px 0}
+.delta{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+</style></head><body><main>
+<h1>Lead management dashboard</h1>
+<p class="sub">Leads created on Nov 18 and Nov 19, 2026 · unassigned leads excluded</p>
+<div class="tabs" role="group" aria-label="View"><button data-v="both" aria-pressed="true">Both days</button><button data-v="Nov 18" aria-pressed="false">Nov 18</button><button data-v="Nov 19" aria-pressed="false">Nov 19</button></div>
+<div id="dash" style="margin-top:16px"></div>
+<h2>Management report</h2>
+<div class="rep">
+<h3 style="margin-top:16px">Nov 18 – what happened</h3>
+<ul>
+<li><b>Thrissur alone brought 28 of 118 leads</b>, and Kerala as a whole sat mostly in Follow Up (31 of 50) with 12 Cold leads, so Kerala is being worked, but a quarter of its volume is going cold.</li>
+<li><b>Hubli holds 9 of the 11 untouched leads</b> and has the lowest note coverage (62%). Other branches were at 86–100%.</li>
+<li>Warm leads: 6 (Hubli 2, Bangalore 2, Kakinada 1, Madurai 1). Dead leads: 3 (Hubli 2, Mysore 1).</li>
+<li>Overall note coverage 92% (108 of 118).</li>
+</ul>
+<h3>Nov 19 – what happened</h3>
+<ul>
+<li><b>Warm and Hot leads nearly doubled to 11</b> (from 6). Bangalore owns 8 of them: 2 Hot and 6 Warm. These need same-day conversion calls.</li>
+<li><b>Nellore has 7 of its 8 leads untouched</b> and only 12% note coverage, the weakest handling of the day. Hubli (5) and Kakinada (3) follow in untouched leads.</li>
+<li><b>Call Back is 40 leads (29%)</b>, up from 31. Kakinada has 8, and Vizag, Mysore and Bangalore have 6 each. These are customers waiting for a call at a promised time.</li>
+<li><b>Dead leads rose to 8 (6%)</b>, from 3. Vizag has 4 of its 21 leads dead (19%), which is high and worth checking against the form audience.</li>
+<li>Facebook form submissions: 47 leads on Nov 19 vs 27 on Nov 18. Overall note coverage 85% (116 of 137).</li>
+</ul>
+<h3>Where it is working</h3>
+<ul>
+<li>Bangalore: 23 leads with 8 Warm/Hot and 96% note coverage. This is the strongest quality on Nov 19.</li>
+<li>Thrissur and Trivandrum kept 100% note coverage on both days.</li>
+<li>Mysore moved to 100% note coverage on Nov 19 with 6 Call Backs scheduled.</li>
+</ul>
+<h3>Problems to fix</h3>
+<ul>
+<li>Untouched leads: 11 → 21 (9% → 15% of volume). Fresh leads left in the Lead stage lose value within hours.</li>
+<li>Nellore: untouched leads and almost no notes. Hubli: untouched on both days.</li>
+<li>Kerala volume fell from 50 to 19, and Tamil Nadu from 18 to 8. Confirm whether this is campaign scheduling or a lead-flow gap.</li>
+<li>Call Back backlog of 40 leads on Nov 19.</li>
+</ul>
+<h3>Actions for tomorrow</h3>
+<ul>
+<li>Nellore and Hubli: call all untouched leads first thing, and write a note on each.</li>
+<li>Bangalore: contact the 2 Hot and 6 Warm leads today and book next steps.</li>
+<li>Kakinada, Vizag, Mysore, Bangalore: clear Call Backs at the promised times.</li>
+<li>Vizag: review the 4 dead leads and the form audience before spend continues.</li>
+<li>Marketing: check why Kerala and Tamil Nadu volume dropped on Nov 19.</li>
+</ul>
+</div>
+</main>
+<script>
+const D={"Nov 18": {"n": 118, "st": {"Lead": 11, "Call Back": 31, "Follow Up": 46, "Warm Lead": 6, "Hot Lead": 0, "Cold Lead": 21, "Dead Lead": 3}, "note": 108, "fb": 27, "z": [["Kerala", 50, 0, 7, 31, 0, 0, 12, 0], ["Karnataka", 36, 11, 11, 3, 4, 0, 4, 3], ["Tamil Nadu", 18, 0, 9, 6, 1, 0, 2, 0], ["AP / TS", 14, 0, 4, 6, 1, 0, 3, 0]], "b": [["Thrissur", 28, 0, 0, 0, 100, "Kerala"], ["Hubli", 21, 9, 2, 2, 62, "Karnataka"], ["Chennai", 16, 0, 0, 0, 100, "Tamil Nadu"], ["Trivandrum", 13, 0, 0, 0, 100, "Kerala"], ["Nellore", 11, 0, 0, 0, 100, "AP / TS"], ["Kochi", 9, 0, 0, 0, 100, "Kerala"], ["Mysore", 8, 1, 0, 1, 88, "Karnataka"], ["Bangalore", 7, 1, 2, 0, 86, "Karnataka"], ["Kakinada", 2, 0, 1, 0, 100, "AP / TS"], ["Coimbatore", 1, 0, 0, 0, 100, "Tamil Nadu"], ["Madurai", 1, 0, 1, 0, 100, "Tamil Nadu"], ["Vizag", 1, 0, 0, 0, 100, "AP / TS"]]}, "Nov 19": {"n": 137, "st": {"Lead": 21, "Call Back": 40, "Follow Up": 38, "Warm Lead": 9, "Hot Lead": 2, "Cold Lead": 19, "Dead Lead": 8}, "note": 116, "fb": 47, "z": [["AP / TS", 59, 12, 18, 20, 0, 0, 5, 4], ["Karnataka", 51, 6, 17, 6, 6, 2, 11, 3], ["Kerala", 19, 1, 1, 11, 2, 0, 3, 1], ["Tamil Nadu", 8, 2, 4, 1, 1, 0, 0, 0]], "b": [["Bangalore", 23, 1, 8, 0, 96, "Karnataka"], ["Kakinada", 23, 3, 0, 0, 87, "AP / TS"], ["Vizag", 21, 0, 0, 4, 100, "AP / TS"], ["Hubli", 17, 5, 0, 2, 71, "Karnataka"], ["Thrissur", 13, 0, 1, 0, 100, "Kerala"], ["Mysore", 10, 0, 0, 1, 100, "Karnataka"], ["Nellore", 8, 7, 0, 0, 12, "AP / TS"], ["Chennai", 7, 2, 1, 0, 71, "Tamil Nadu"], ["Hyderabad", 5, 1, 0, 0, 80, "AP / TS"], ["Trivandrum", 4, 0, 1, 1, 100, "Kerala"], ["Kochi", 2, 1, 0, 0, 50, "Kerala"], ["Vijayawada", 2, 1, 0, 0, 50, "AP / TS"], ["Coimbatore", 1, 0, 0, 0, 100, "Tamil Nadu"], ["Mangalore", 1, 0, 0, 0, 100, "Karnataka"]]}},ST=['Lead','Call Back','Follow Up','Warm Lead','Hot Lead','Cold Lead','Dead Lead'];
+const pc=(a,b)=>Math.round(100*a/b);
+function day(k){const d=D[k],mx=Math.max(...ST.map(s=>d.st[s]));
+const wh=d.st['Warm Lead']+d.st['Hot Lead'];
+let h=`<div class="day"><h2>${k}</h2><div class="kpis">
+<div class="k"><b>${d.n}</b><span>Leads assigned</span></div>
+<div class="k"><b>${d.st['Lead']}</b><span>Untouched (Lead stage)</span></div>
+<div class="k"><b>${wh}</b><span>Warm + Hot</span></div>
+<div class="k"><b>${d.st['Call Back']}</b><span>Call Back</span></div>
+<div class="k"><b>${d.st['Dead Lead']}</b><span>Dead</span></div>
+<div class="k"><b>${pc(d.note,d.n)}%</b><span>With activity note</span></div></div>
+<h3>Lead stage</h3>`;
+ST.forEach(s=>h+=`<div class="row"><span>${s}</span><div class="bar"><i style="width:${d.st[s]/mx*100}%"></i></div><b>${d.st[s]}</b></div>`);
+h+=`<h3 style="margin-top:16px">Zone</h3><div class="sc"><table><tr><th>Zone</th><th>Leads</th><th>Lead</th><th>Call Back</th><th>Follow Up</th><th>Warm</th><th>Hot</th><th>Cold</th><th>Dead</th></tr>`;
+d.z.forEach(r=>h+=`<tr><td>${r[0]}</td><td><b>${r[1]}</b></td>${r.slice(2).map(v=>`<td>${v||'–'}</td>`).join('')}</tr>`);
+h+=`</table></div><h3 style="margin-top:16px">Branch</h3><div class="sc"><table><tr><th>Branch</th><th>Leads</th><th>Untouched</th><th>Warm/Hot</th><th>Dead</th><th>Notes</th></tr>`;
+d.b.forEach(r=>h+=`<tr><td>${r[0]}</td><td><b>${r[1]}</b></td><td class="${r[2]>=5?'r':''}">${r[2]||'–'}</td><td class="${r[3]?'g':''}">${r[3]||'–'}</td><td class="${r[4]>=3?'w':''}">${r[4]||'–'}</td><td class="${r[5]<70?'r':''}">${r[5]}%</td></tr>`);
+return h+`</table></div></div>`}
+function show(v){document.getElementById('dash').innerHTML=`<div class="grid ${v=='both'?'two':''}">`+(v=='both'?['Nov 18','Nov 19']:[v]).map(day).join('')+`</div>`;
+document.querySelectorAll('.tabs button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.v==v))}
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>show(b.dataset.v));
+show('both');
+</script></body></html>
